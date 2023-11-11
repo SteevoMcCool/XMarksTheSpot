@@ -60,19 +60,19 @@ levels = [
             "right":1,
             "up":1,
             "left": 1,
-            "down": 60,
+            "down": 1,
         },
-        "startPoint": (70,15),
-        "xPosX": lambda pX,pY: floor(cos(pX)*50 + 50),
-        "xPosY": lambda pX,pY: floor(sin(pY)*30 + 30) , 
+        "startPoint": (70,10),
+        "xPosX": lambda pX,pY: floor(cos(pX *1/12)*50 + 50),
+        "xPosY": lambda pX,pY: floor(sin(pY *1/16)*30 + 30) , 
         "enemies": [
             {
                 "xPos": lambda pX,pY: floor( (pX + pY) * 100/160),
                 "yPos": lambda pX,pY: floor( abs(pX-pY) * 50/100 + 10)
             },
             {
-                "xPos": lambda pX,pY: floor( floor(-cos(pX)*50 + 50)),
-                "yPos": lambda pX,pY: floor( floor(-sin(pY)*50 + 50))
+                "xPos": lambda pX,pY: floor( floor(-cos(pX * 1/12)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
             },
         ]
     },
@@ -179,7 +179,7 @@ def generateLevel(level):
                     </body>
                     </html>
             """
-            if len(list(filter(lambda e: abs(e["xPos"](X,Y)-X<=1) and abs(e["yPos"](X,Y)-Y<=1),lv["enemies"]))):
+            if len(list(filter(lambda e: ((abs(e["xPos"](X,Y)-X)<=1) and (abs(e["yPos"](X,Y)-Y)<=1)),lv["enemies"]))):
                     innerHTML = f'''
                     <html><head></head>
                     <body style="background-color: rgb(175,0,0)">
@@ -232,4 +232,3 @@ def generateAllLevels(len=len(levels)-1,string=""):
 
 
 generateAllLevels()
-
