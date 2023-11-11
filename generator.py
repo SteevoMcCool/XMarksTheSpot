@@ -1,4 +1,4 @@
-from math import floor, sin
+from math import floor, sin,cos
 import os 
 
 levels = [
@@ -53,6 +53,29 @@ levels = [
             }
         ]
     },
+        {
+        "name": "Level4",
+        "size": (100,60),
+        "charSpeed": {
+            "right":1,
+            "up":1,
+            "left": 1,
+            "down": 60,
+        },
+        "startPoint": (70,15),
+        "xPosX": lambda pX,pY: floor(cos(pX)*50 + 50),
+        "xPosY": lambda pX,pY: floor(sin(pY)*30 + 30) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor( (pX + pY) * 100/160),
+                "yPos": lambda pX,pY: floor( abs(pX-pY) * 50/100 + 10)
+            },
+            {
+                "xPos": lambda pX,pY: floor( floor(-cos(pX)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY)*50 + 50))
+            },
+        ]
+    },
 ]
 def getxPos(lv,x,y):
     return (levels[lv]["xPosX"](x,y), levels[lv]["xPosY"](x,y) )
@@ -87,6 +110,8 @@ def solve(level=0,):
 
 def expressSolutions(level):
     (g,b) = solve(level)
+    if (levels[level]['startPoint'] in b):
+        return False
     return (list(filter(lambda p: not p in b, g)), list(filter(lambda p:  p in b, g)))
 
 def generateLevel(level):
@@ -122,7 +147,7 @@ def generateLevel(level):
                 line = f"<h3>Solved: ({xx},{xy}). <a href={nextlevelhref}>Next Level?</a></h3>"
             innerHTML = \
             f"""
-                    <html><head></head>
+                    <html><head><title>X-Jam:{lv["name"]}</title></head>
                     <body style="background-color: rgb(0,100,175)">
                         <div style="display:flex">
                             <div>
@@ -144,7 +169,7 @@ def generateLevel(level):
                                 <a href="{toName(   (X+right*10) %sX   ,  (Y) %sY          )}"><img src="../r.png" height="20"></a>
                             </div> 
                             {line}
-                            <a href="../home.html">Home</a>
+                            <h3>{lv["name"]}: ({X},{Y}):<a href="../home.html">Home</a></h3>
                         </div>
                         <div style="position:relative;top:0px;border:1px solid black; width:{pixelWidth + 20};height:{pixelHeight + 50}">
                             <img src="{Xsource}" height="50" width="20" style="position:absolute;top:{Xpixel[1]}px;left:{Xpixel[0]}px">
@@ -206,8 +231,5 @@ def generateAllLevels(len=len(levels)-1,string=""):
 
 
 
-
 generateAllLevels()
-print(
-expressSolutions(2)
-)
+
