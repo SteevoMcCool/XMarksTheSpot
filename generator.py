@@ -3,7 +3,7 @@ import os
 
 levels = [
     {
-        "name": "LevelI",
+        "name": "Level_I",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -19,7 +19,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelII",
+        "name": "Level_II",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -35,7 +35,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelIII",
+        "name": "Level_III",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -55,7 +55,7 @@ levels = [
         "note": "Don't touch the enemy!"
     },
     {
-        "name": "LevelIV",
+        "name": "Level_IV",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -78,7 +78,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelV",
+        "name": "Level_V",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -105,7 +105,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelVI",
+        "name": "Level_VI",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -128,7 +128,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelVII",
+        "name": "Level_VII",
         "size": (100,60),
         "charSpeed": {
             "right":10,
@@ -152,7 +152,7 @@ levels = [
         "note": "In this level, the arrowkeys dont always move you a distance of 1."
     },
     {
-        "name": "LevelVIII",
+        "name": "Level_VIII",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -175,7 +175,7 @@ levels = [
         ]
     },
     {
-        "name": "LevelIX",
+        "name": "Level_IX",
         "size": (100,60),
         "charSpeed": {
             "right":2,
@@ -207,7 +207,7 @@ levels = [
         "note": "In this level, the arrowkeys dont always move you a distance of 1."
     },
     {
-        "name": "LevelX",
+        "name": "Level_X",
         "size": (100,60),
         "charSpeed": {
             "right":7,
@@ -416,7 +416,7 @@ def generateAllLevels(len=len(levels)-1,string=""):
 
 
 
-#generateAllLevels()
+generateAllLevels()
 
 
 t=0
