@@ -405,7 +405,7 @@ def generateAllLevels(len=len(levels)-1,string=""):
 
 
 
-#generateAllLevels()
+generateAllLevels()
 
 
 t=0
