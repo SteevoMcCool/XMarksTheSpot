@@ -3,7 +3,7 @@ import os
 
 levels = [
     {
-        "name": "Level1",
+        "name": "LevelI",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -19,7 +19,7 @@ levels = [
         ]
     },
     {
-        "name": "Level2",
+        "name": "LevelII",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -35,7 +35,7 @@ levels = [
         ]
     },
     {
-        "name": "Level3",
+        "name": "LevelIII",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -51,10 +51,11 @@ levels = [
                 "xPos": lambda pX,pY: floor((95/52)*(pY-8) + 5),
                 "yPos": lambda pX,pY: floor((52/95)*(pX-5) + 8)
             }
-        ]
+        ],
+        "note": "Don't touch the enemy!"
     },
-        {
-        "name": "Level4",
+    {
+        "name": "LevelIV",
         "size": (100,60),
         "charSpeed": {
             "right":1,
@@ -75,6 +76,175 @@ levels = [
                 "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
             },
         ]
+    },
+    {
+        "name": "LevelV",
+        "size": (100,60),
+        "charSpeed": {
+            "right":1,
+            "up":1,
+            "left": 1,
+            "down": 1,
+        },
+        "startPoint": (90,50),
+        "xPosX": lambda pX,pY: floor((pX + pY)/160 *100),
+        "xPosY": lambda pX,pY: floor(abs(pX-pY) + 10) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor( (pX + pY) * 80/160 + 20),
+                "yPos": lambda pX,pY: floor( abs(pX-pY) * 50/100 + 10)
+            },
+            {
+                "xPos": lambda pX,pY: floor( floor(-cos(pX * 1/12)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
+            },
+            {
+                "xPos": lambda pX,pY: floor( pY**2 / 60 * 100),
+                "yPos": lambda pX,pY: floor( pX/5 + pY/2 + 50)
+            },
+        ]
+    },
+    {
+        "name": "LevelVI",
+        "size": (100,60),
+        "charSpeed": {
+            "right":1,
+            "up":1,
+            "left": 1,
+            "down": 1,
+        },
+        "startPoint": (10,10),
+        "xPosX": lambda pX,pY: floor(cos((pX**2 - pY)/80) * 30 + 50),
+        "xPosY": lambda pX,pY: floor(sin((pY**2+pX)/80)*30+30) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor(cos(pX/5 + pY/5) * 50 + 50),
+                "yPos": lambda pX,pY: floor(sin(pX/10 + pY/2) * 10 + 10)
+            },
+            {
+                "xPos": lambda pX,pY: floor(-cos(pX/5 + pY/5) * 50 + 50),
+                "yPos": lambda pX,pY: floor(sin(pX/10 + pY/2) * 20 + 40)
+            },
+        ]
+    },
+    {
+        "name": "LevelVII",
+        "size": (100,60),
+        "charSpeed": {
+            "right":10,
+            "up":6,
+            "left": 3,
+            "down": 5,
+        },
+        "startPoint": (18,26),
+        "xPosX": lambda pX,pY: floor(100 * (pX/100 + pY/60)/2),
+        "xPosY": lambda pX,pY: floor(30+ 30* sin(6.283*(pX + pY)/160)), 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor( (pX + pY) * 100/160),
+                "yPos": lambda pX,pY: floor(sin(pX * 6.28/65) * 30 + 30)
+            },
+            {
+                "xPos": lambda pX,pY: floor( floor(-cos(pX * 1/12)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
+            },
+        ],
+        "note": "In this level, the arrowkeys dont always move you a distance of 1."
+    },
+    {
+        "name": "LevelVIII",
+        "size": (100,60),
+        "charSpeed": {
+            "right":1,
+            "up":1,
+            "left": 1,
+            "down": 1,
+        },
+        "startPoint": (70,10),
+        "xPosX": lambda pX,pY: floor(100- ((pX+pY)/160 * 100)**2 / (100* (pY+1))),
+        "xPosY": lambda pX,pY: floor(60-(pX+pY)/160 * 60) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor( (pX + pY) * 100/160),
+                "yPos": lambda pX,pY: floor( abs(pX-pY) * 50/100 + 10)
+            },
+            {
+                "xPos": lambda pX,pY: floor( floor(-cos(pX * 1/12)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
+            },
+        ]
+    },
+    {
+        "name": "LevelIX",
+        "size": (100,60),
+        "charSpeed": {
+            "right":2,
+            "up":1,
+            "left": 3,
+            "down": 2,
+        },
+        "startPoint": (50,50),
+        "xPosX": lambda pX,pY: floor(100- ((pX+pY)/160 * 100)**2 / (100* (pY+1))),
+        "xPosY": lambda pX,pY: floor(((pX+pY)/160 * 120)%60) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor( (pX + pY) * 100/160),
+                "yPos": lambda pX,pY: floor( abs(pX-pY) * 50/100 + 10)
+            },
+            {
+                "xPos": lambda pX,pY: floor( floor(-cos(pX * 1/12)*50 + 50)),
+                "yPos": lambda pX,pY: floor( floor(-sin(pY * 1/16)*30 + 30))
+            },
+            {
+                "xPos": lambda pX,pY: floor(100- pX*pY/60),
+                "yPos": lambda pX,pY: floor(60-pX*pY/100)
+            },
+            {
+                "xPos": lambda pX,pY: floor((98 +  0.7*(pX - 98) + 0.2 * (pY-52))%100),
+                "yPos": lambda pX,pY: floor((52 +  0.7*(pX - 98)**2 + 0.2 * (pY-52))%100)
+            },
+        ],
+        "note": "In this level, the arrowkeys dont always move you a distance of 1."
+    },
+    {
+        "name": "LevelX",
+        "size": (100,60),
+        "charSpeed": {
+            "right":7,
+            "up":3,
+            "left": 4,
+            "down": 2,
+        },
+        "startPoint": (0,0),
+        "xPosX": lambda pX,pY: floor(cos((pX + pY)/100)*50 + 50),
+        "xPosY": lambda pX,pY: floor( cos((pX - pY)/100)*30 > 0 and  cos((pX - pY)/100)*30 or -cos((pX - pY)/100)*30) , 
+        "enemies": [
+            {
+                "xPos": lambda pX,pY: floor(pX),
+                "yPos": lambda pX,pY: floor(30)
+            },
+            {
+                "xPos": lambda pX,pY: floor( 50),
+                "yPos": lambda pX,pY: floor(pY)
+            },
+                     {
+                "xPos": lambda pX,pY: floor(100-(pY*100/60)),
+                "yPos": lambda pX,pY: floor(cos((pX + pY)/65)*30 + 30)
+            },
+            {
+                "xPos": lambda pX,pY: floor(20),
+                "yPos": lambda pX,pY: floor(60-pY)
+            },
+            {
+                "xPos": lambda pX,pY: floor(80),
+                "yPos": lambda pX,pY: floor(60-pY)
+            },
+            {
+                "xPos": lambda pX,pY: floor(100- pX*pY/60),
+                "yPos": lambda pX,pY: floor(60-pX*pY/100)
+            },
+        ],
+        "note": "In this level, the arrowkeys dont always move you a distance of 1. Good Luck!"
     },
 ]
 def getxPos(lv,x,y):
@@ -104,7 +274,7 @@ def solve(level=0,):
                 ret+= [(XX,XY)]
             if (not XX in xR) or (not XY in yR):
                 bad += [([X,XX],[Y,XY])]
-            if len(list(filter(lambda e: abs(e["xPos"](X,Y)-X<=1) and abs(e["yPos"](X,Y)-Y<=1),lv["enemies"]))):
+            if len(list(filter(lambda e: ((abs(e["xPos"](X,Y)-X)<=1) and (abs(e["yPos"](X,Y)-Y)<=1)),lv["enemies"]))):
                 enem+= [(X,Y)]
     return (ret, enem)
 
@@ -129,6 +299,9 @@ def generateLevel(level):
         os.makedirs(dir)
     pixelWidth = 800//1.25
     pixelHeight = 480//1.25
+    note = ""
+    if "note" in lv:
+        note = "<p>" +  lv["note"] + "</p>"
     for X in xR:
         pixelX = int(pixelWidth * (X/sX))
         for Y in yR:
@@ -150,6 +323,7 @@ def generateLevel(level):
                     <html><head><title>X-Jam:{lv["name"]}</title></head>
                     <body style="background-color: rgb(0,100,175)">
                         <div style="display:flex">
+                            {note}
                             <div>
                                 <p>Walk</p>
                                 &emsp;&nbsp;
@@ -231,4 +405,11 @@ def generateAllLevels(len=len(levels)-1,string=""):
 
 
 
-generateAllLevels()
+#generateAllLevels()
+
+
+t=0
+
+while (t<10):
+    print(expressSolutions(t))
+    t+=1
