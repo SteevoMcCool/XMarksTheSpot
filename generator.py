@@ -390,14 +390,14 @@ def generateAllLevels(len=len(levels)-1,string=""):
                 </ul>
                 <p style="color:white">
                     <b>Instructions:</b>
-                    Use the arrowkeys to navigate the board and land *exactly* on the X to beat the level.
-                    You can "JUMP" over enemies. Your "JUMP" is always 10x the distance of movement.
-                    Going out of one edge of the board will put you onto the other side. Use this to avoid enemies or get to the X.
-                    If you JUMP off the edge of the board, the remaining distance will be added when you loop back to the other side.
-                    Enemies have a 1-unit kill radius. The X has a 0 unit detection radius. You must land perfectly on it to beat the level!
-                    The arrowkeys may not always move you a distance of 1. On some levels, the "up-arrow" may move two. You will always be informed if something like this is the case.
-                    As stated, if the "left-arrow" has a movement of three, your "left jump" is 10x that which is 30. If your "right-arrow" has a movement of 2, you can still navigate to every point on the board.
-                    Good luck, and land on the X to win! :)
+                    Use the arrowkeys to navigate the board and land *exactly* on the X to beat the level.<br>
+                    You can "JUMP" over enemies. Your "JUMP" is always 10x the distance of movement.<br>
+                    Going out of one edge of the board will put you onto the other side. Use this to avoid enemies or get to the X.<br>
+                    If you JUMP off the edge of the board, the remaining distance will be added when you loop back to the other side.<br>
+                    Enemies have a 1-unit kill radius. The X has a 0 unit detection radius. You must land perfectly on it to beat the level!<br>
+                    The arrowkeys may not always move you a distance of 1. On some levels, the "up-arrow" may move two. You will always be informed if something like this is the case.<br>
+                    As stated, if the "left-arrow" has a movement of three, your "left jump" is 10x that which is 30. If your "right-arrow" has a movement of 2, you can still navigate to every point on the board.<br>
+                    Good luck, and land on the X to win! :)<br>
                 </p>
             </body>
             </html>
